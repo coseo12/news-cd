@@ -2,9 +2,9 @@
   <div>
 	<div class="board">
 		<ul class="item-list">
-			<li v-for="(item, index) in fetchedBoardList" :key="item.id" class="post">
+			<li v-for="item in fetchedBoardList" :key="item.id" class="post">
 				<div class="points">
-					{{ totalItems - index }}
+					<font-awesome-icon icon="feather-alt" class="toBtn" />
 				</div>
 				<div>
 					<template>
