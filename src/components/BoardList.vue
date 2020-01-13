@@ -1,8 +1,9 @@
 <template>
   <div>
       <ul class="item-list">
-        <li v-for="item in fetchedBoardList" :key="item.id" class="post">
+        <li v-for="(item, index) in fetchedBoardList" :key="item.id" class="post">
             <div class="points">
+				{{ totalItems - index }}
             </div>
             <div>
                 <template>
@@ -42,6 +43,11 @@ import ListMixin from '../mixins/ListMixin.js';
 export default {
 	computed: {
 		...mapGetters(['fetchedBoardList']),
+	},
+	data() {
+		return {
+			totalItems: this.$store.state.totalItems,
+		};
 	},
 	methods: {
 		toWrite() {
