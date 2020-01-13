@@ -8,6 +8,8 @@
       <router-link to="/jobs">Jobs</router-link>
       <span>&nbsp;|&nbsp;</span>
       <router-link to="/board">Board</router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link to="/chart">Chart</router-link>
       <span v-if="testing">&nbsp;|&nbsp;</span>
       <router-link v-if="testing" to="/testing">Testing</router-link>
     </nav>
