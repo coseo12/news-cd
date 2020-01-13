@@ -10,5 +10,14 @@ export default {
   },
   SET_BOARD(state, payload) {
     state.boardList = payload
+  },
+  SET_NOWPAGE(state, payload) {
+    state.nowPage = payload
+  },
+  SET_PAGING_DEFAULT(state) {
+    state.totalItems = state.boardList.length;
+    state.totalPage = Math.ceil(
+      state.totalItems / state.pageRange,
+    );
   }
 };

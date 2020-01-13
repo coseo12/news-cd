@@ -8,12 +8,20 @@
       <router-link to="/jobs">Jobs</router-link>
       <span>&nbsp;|&nbsp;</span>
       <router-link to="/board">Board</router-link>
+      <span v-if="testing">&nbsp;|&nbsp;</span>
+      <router-link v-if="testing" to="/testing">Testing</router-link>
     </nav>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+	data() {
+		return {
+			testing: false,
+		};
+	},
+};
 </script>
 
 <style scoped>

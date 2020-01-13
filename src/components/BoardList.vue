@@ -15,15 +15,29 @@
                 </small>
             </div>
         </li>
-        <span class="btnContainer" @click="toWrite">   
-            <font-awesome-icon icon="feather-alt" class="toBtn" /> Write
-        </span>
+		<div class="wrap">
+			<span class="paginationBox">
+				<nav aria-label="Page navigation">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#" @click="setPreNext('P')">Previous</a></li>
+						<li class="page-item" :class="{ setPage: $store.state.nowPage === item }" v-for="item in this.$store.state.totalPage" :key="item">
+							<a class="page-link" href="#" @click="setNowPage(item)">{{ item }}</a>
+						</li>
+						<li class="page-item"><a class="page-link" href="#" @click="setPreNext('N')">Next</a></li>
+					</ul>
+				</nav>	
+			</span>
+			<span class="btnContainer" @click="toWrite">   
+				<font-awesome-icon icon="feather-alt" class="toBtn" /> Write
+			</span>
+		</div>
     </ul>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex';
+import ListMixin from '../mixins/ListMixin.js';
 
 export default {
 	computed: {
@@ -33,7 +47,29 @@ export default {
 		toWrite() {
 			this.$router.push('/write');
 		},
+		setNowPage(item) {
+			this.$store.commit('SET_NOWPAGE', item);
+		},
+		setPreNext(item) {
+			let nowPage = this.$store.state.nowPage;
+			const totalPage = this.$store.state.totalPage;
+
+			if (item === 'P') {
+				if (nowPage > 1) {
+					this.$store.commit('SET_NOWPAGE', nowPage - 1);
+				} else {
+					alert('First page!');
+				}
+			} else {
+				if (nowPage < totalPage) {
+					this.$store.commit('SET_NOWPAGE', nowPage + 1);
+				} else {
+					alert('Last page!');
+				}
+			}
+		},
 	},
+	mixins: [ListMixin],
 };
 </script>
 
@@ -74,5 +110,15 @@ export default {
 	border-top-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 	cursor: pointer;
+}
+.paginationBox {
+	float: left;
+	margin: 0.5rem;
+}
+.wrap {
+	padding: 0.5rem;
+}
+.setPage a {
+	background: lightblue;
 }
 </style>

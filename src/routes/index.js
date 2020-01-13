@@ -9,6 +9,7 @@ import JobsView from '../views/JobsView.vue';
 import BoardView from '../views/BoardView.vue';
 import BoardItemView from '../views/BoardItemView.vue';
 import WriteView from '../views/WriteView.vue';
+import TestingView from '../views/TestingView.vue';
 import bus from '../utils/bus.js';
 import { store } from '../store/index.js';
 
@@ -63,6 +64,7 @@ export const router = new VueRouter({
       component: BoardView,
       // component: createListView('JobsView'),
       beforeEnter: async (to, from, next) => {
+        bus.$emit('start:spinner');
         next();
       },
     },
@@ -70,10 +72,11 @@ export const router = new VueRouter({
       path: '/write',
       name: 'write',
       component: WriteView,
-      // component: createListView('JobsView'),
-      beforeEnter: async (to, from, next) => {
-        next();
-      },
+    },
+    {
+      path: '/testing',
+      name: 'testing',
+      component: TestingView,
     },
     {
       path: '/user/:id',
