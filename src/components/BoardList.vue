@@ -1,22 +1,25 @@
 <template>
   <div>
-      <ul class="item-list">
-        <li v-for="(item, index) in fetchedBoardList" :key="item.id" class="post">
-            <div class="points">
-				{{ totalItems - index }}
-            </div>
-            <div>
-                <template>
-                    <p class="item-title">
-                        <router-link v-bind:to="`/board/${item.id}`">{{ item.title }}</router-link>
-                    </p>
-                </template>
-                <small class="link-text"> 
-                    {{ item.time_ago }} by {{ item.user }}
-                </small>
-            </div>
-        </li>
-		<div class="wrap">
+	<div class="board">
+		<ul class="item-list">
+			<li v-for="(item, index) in fetchedBoardList" :key="item.id" class="post">
+				<div class="points">
+					{{ totalItems - index }}
+				</div>
+				<div>
+					<template>
+						<p class="item-title">
+							<router-link v-bind:to="`/board/${item.id}`">{{ item.title }}</router-link>
+						</p>
+					</template>
+					<small class="link-text"> 
+						{{ item.time_ago }} by {{ item.user }}
+					</small>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="wrap">
 			<span class="paginationBox">
 				<nav aria-label="Page navigation">
 					<ul class="pagination">
@@ -32,7 +35,6 @@
 				<font-awesome-icon icon="feather-alt" class="toBtn" /> Write
 			</span>
 		</div>
-    </ul>
   </div>
 </template>
 
@@ -126,5 +128,8 @@ export default {
 }
 .setPage a {
 	background: lightblue;
+}
+.board {
+	height: 600px;
 }
 </style>
