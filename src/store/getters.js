@@ -8,4 +8,7 @@ export default {
   fetchedList(state) {
     return state.list;
   },
+  fetchedBoardList(state) {
+    return state.boardList;
+  }
 };

@@ -43,9 +43,29 @@ vue_news.interceptors.response.use(
 );
 
 // API Function setup
-const fetchUser = userId => vue_news.get(`user/${userId}.json`);
-const fetchItem = itemId => vue_news.get(`item/${itemId}.json`);
-const fetchList = pageName => vue_news.get(`${pageName}/1.json`);
+const fetchUser = async userId => {
+  try {
+    return await vue_news.get(`user/${userId}.json`);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const fetchItem = async itemId => {
+  try {
+    return await vue_news.get(`item/${itemId}.json`);
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+const fetchList = async pageName => {
+  try {
+    return await vue_news.get(`${pageName}/1.json`)
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 // Export API Function
 export { fetchList, fetchUser, fetchItem };

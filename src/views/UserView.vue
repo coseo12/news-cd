@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import UserProfile from '../components/UserProfile.vue';
+import UserProfile from '../components/slots/UserProfile.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {

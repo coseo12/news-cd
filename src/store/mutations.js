@@ -8,4 +8,7 @@ export default {
   SET_LIST(state, payload) {
     state.list = payload;
   },
+  SET_BOARD(state, payload) {
+    state.boardList = payload
+  }
 };

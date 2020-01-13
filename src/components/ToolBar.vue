@@ -6,6 +6,8 @@
       <router-link to="/ask">Ask</router-link>
       <span>&nbsp;|&nbsp;</span>
       <router-link to="/jobs">Jobs</router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link to="/board">Board</router-link>
     </nav>
   </div>
 </template>
