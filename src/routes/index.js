@@ -10,6 +10,7 @@ import BoardView from '../views/BoardView.vue';
 import BoardItemView from '../views/BoardItemView.vue';
 import WriteView from '../views/WriteView.vue';
 import ChartView from '../views/ChartView.vue';
+import I18nTest from '../components/I18nTest.vue';
 import TestingView from '../views/TestingView.vue';
 import bus from '../utils/bus.js';
 import { store } from '../store/index.js';
@@ -78,6 +79,11 @@ export const router = new VueRouter({
         bus.$emit('start:spinner');
         next();
       },
+    },
+    {
+      path: '/i18n',
+      name: 'i18n',
+      component: I18nTest,
     },
     {
       path: '/write',

@@ -5,6 +5,7 @@ import { store } from './store/index.js';
 import awesome from './plugins/awesome';
 import JwPagination from 'jw-vue-pagination';
 import chartjs from './plugins/ChartPlugin';
+import i18n from './i18n'
 
 Vue.component('jw-pagination', JwPagination);
 Vue.use(awesome);
@@ -14,5 +15,6 @@ Vue.config.productionTip = false;
 new Vue({
   store,
   router,
-  render: h => h(App),
+  i18n,
+  render: h => h(App)
 }).$mount('#app');

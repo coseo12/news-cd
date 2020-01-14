@@ -6,6 +6,7 @@ import {
   faUser,
   faFeatherAlt,
   faList,
+  faExchangeAlt,
 } from '@fortawesome/free-solid-svg-icons';
 import { faGooglePlus } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
@@ -19,6 +20,7 @@ export default {
     library.add(faUser);
     library.add(faFeatherAlt);
     library.add(faList);
+    library.add(faExchangeAlt);
     Vue.component('font-awesome-icon', FontAwesomeIcon);
   },
 };
