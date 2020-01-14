@@ -1,36 +1,34 @@
 <template>
-  <div>
-      <div class="card text-center m-3">
-        <h3 class="card-header">Vue.js Pagination Tutorial & Example</h3>
-        <div class="card-body">
-            <div v-for="item in pageOfItems" :key="item.id">{{item.name}}</div>
-        </div>
-        <div class="card-footer pb-0 pt-3">
-            <jw-pagination :items="exampleItems" @changePage="onChangePage"></jw-pagination>
-        </div>
-    </div>
-  </div>
+	<div>
+		<div id="pagination" v-if="pagination">
+			<pagination-example></pagination-example>
+		</div>
+		<div id="googleMap" v-if="googleMap">
+			<google-map></google-map>
+		</div>
+		<div id="kakaoMap" v-if="kakaoMap">
+			<kakao-map></kakao-map>
+		</div>
+	</div>
 </template>
 
 <script>
-// an example array of items to be paged
-const exampleItems = [...Array(150).keys()].map(i => ({
-	id: i + 1,
-	name: 'Item ' + (i + 1),
-}));
+import PaginationExample from '../components/PaginationExample';
+import GoogleMap from '../components/GoogleMap';
+import KakaoMap from '../components/KakaoMap';
 
 export default {
+	components: {
+		PaginationExample,
+		GoogleMap,
+		KakaoMap,
+	},
 	data() {
 		return {
-			exampleItems,
-			pageOfItems: [],
+			pagination: false,
+			googleMap: false,
+			kakaoMap: true,
 		};
-	},
-	methods: {
-		onChangePage(pageOfItems) {
-			// update page of items
-			this.pageOfItems = pageOfItems;
-		},
 	},
 };
 </script>
