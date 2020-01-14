@@ -1,17 +1,17 @@
 <template>
   <div>
     <nav>
-      <router-link to="/news">News</router-link>
+      <router-link to="/news">{{$t('message.News')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
-      <router-link to="/ask">Ask</router-link>
+      <router-link to="/ask">{{$t('message.Ask')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
-      <router-link to="/jobs">Jobs</router-link>
+      <router-link to="/jobs">{{$t('message.Jobs')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
-      <router-link to="/board">Board</router-link>
+      <router-link to="/board">{{$t('message.Board')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
-      <router-link to="/chart">Chart</router-link>
+      <router-link to="/chart">{{$t('message.Chart')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
-      <router-link to="/i18n">i18n</router-link>
+      <router-link to="/i18n">{{$t('message.i18n')}}</router-link>
       <span v-if="testing">&nbsp;|&nbsp;</span>
       <router-link v-if="testing" to="/testing">Testing</router-link>
     </nav>

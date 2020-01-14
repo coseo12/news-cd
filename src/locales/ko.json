@@ -1,8 +1,18 @@
 {
   "message": {
     "hello": "안녕",
-    "chart": "차트",
-    "board": "게시판",
-    "jobs": "직업"
+    "Chart": "차트",
+    "Board": "게시판",
+    "Jobs": "체용정보",
+    "Ask": "문의",
+    "News": "뉴스",
+    "i18n": "i18n",
+    "LocaleChange": "로케일변경",
+    "Write": "새글쓰기",
+    "Modify": "수정하기",
+    "ToList": "목록으로",
+    "Delete": "삭제하기",
+    "Previous": "이전",
+    "Next": "다음"
   }
 }

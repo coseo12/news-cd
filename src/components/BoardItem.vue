@@ -17,13 +17,13 @@
       <div class="content" v-html="fetchedItem.content"></div>
     </section>
     <span class="modifyContainer" @click="setModify">   
-        <font-awesome-icon icon="feather-alt" class="modifyBtn" /> Modify
+        <font-awesome-icon icon="feather-alt" class="modifyBtn" /> {{ $t('message.Modify') }}
     </span>
     <span class="modifyContainer" @click="deleted">   
-        <font-awesome-icon icon="trash-alt" class="delBtn" /> Delete
+        <font-awesome-icon icon="trash-alt" class="delBtn" /> {{ $t('message.Delete') }}
     </span>
     <span class="modifyContainer" @click="toList">   
-        <font-awesome-icon icon="list" class="toBtn" /> toList
+        <font-awesome-icon icon="list" class="toBtn" /> {{ $t('message.ToList') }}
     </span>
   </div>
 </template>

@@ -23,16 +23,16 @@
 			<span class="paginationBox">
 				<nav aria-label="Page navigation">
 					<ul class="pagination">
-						<li class="page-item"><a class="page-link" href="#" @click="setPreNext('P')">Previous</a></li>
+						<li class="page-item"><a class="page-link" href="#" @click="setPreNext('P')">{{ $t('message.Previous') }}</a></li>
 						<li class="page-item" :class="{ setPage: $store.state.nowPage === item }" v-for="item in this.$store.state.totalPage" :key="item">
 							<a class="page-link" href="#" @click="setNowPage(item)">{{ item }}</a>
 						</li>
-						<li class="page-item"><a class="page-link" href="#" @click="setPreNext('N')">Next</a></li>
+						<li class="page-item"><a class="page-link" href="#" @click="setPreNext('N')">{{ $t('message.Next') }}</a></li>
 					</ul>
 				</nav>	
 			</span>
 			<span class="btnContainer" @click="toWrite">   
-				<font-awesome-icon icon="feather-alt" class="toBtn" /> Write
+				<font-awesome-icon icon="feather-alt" class="toBtn" /> {{ $t('message.Write') }}
 			</span>
 		</div>
   </div>

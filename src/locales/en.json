@@ -1,8 +1,18 @@
 {
   "message": {
     "hello": "hello",
-    "chart": "chart",
-    "board": "board",
-    "jobs": "jobs"
+    "Chart": "Chart",
+    "Board": "Board",
+    "Jobs": "Jobs",
+    "Ask": "Ask",
+    "News": "News",
+    "i18n": "i18n",
+    "LocaleChange": "LocaleChange",
+    "Write": "Write",
+    "Modify": "Modify",
+    "ToList": "ToList",
+    "Delete": "Delete",
+    "Previous": "Previous",
+    "Next": "Next"
   }
 }

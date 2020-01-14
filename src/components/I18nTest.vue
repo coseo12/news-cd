@@ -1,13 +1,10 @@
 <template>
 	<div>
 		<div class="lo">
-			{{$t('message.hello')}}
-			{{$t('message.jobs')}}
-			{{$t('message.chart')}}
-			{{$t('message.board')}}
+			{{$t('message')}}
 		</div>
 		<span class="btnContainer" @click="changeLocales">   
-			<font-awesome-icon icon="exchange-alt" class="chgLo" /> LocaleChange
+			<font-awesome-icon icon="exchange-alt" class="chgLo" /> {{$t('message.LocaleChange')}}
 		</span>
 	</div>
 </template>
