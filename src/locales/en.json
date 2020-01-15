@@ -1,7 +1,7 @@
 {
   "message": {
     "hello": "hello",
-    "Chart": "Chart",
+    "ChartJs": "ChartJs",
     "Board": "Board",
     "Jobs": "Jobs",
     "Ask": "Ask",
@@ -13,6 +13,7 @@
     "ToList": "ToList",
     "Delete": "Delete",
     "Previous": "Previous",
-    "Next": "Next"
+    "Next": "Next",
+    "File": "FileUpload"
   }
 }

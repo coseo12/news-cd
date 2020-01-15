@@ -12,6 +12,7 @@ import WriteView from '../views/WriteView.vue';
 import ChartView from '../views/ChartView.vue';
 import I18nTest from '../components/I18nTest.vue';
 import TestingView from '../views/TestingView.vue';
+import FileUploadView from '../views/FileUploadView.vue';
 import bus from '../utils/bus.js';
 import { store } from '../store/index.js';
 
@@ -78,6 +79,17 @@ export const router = new VueRouter({
       // component: createListView('JobsView'),
       beforeEnter: async (to, from, next) => {
         bus.$emit('start:spinner');
+        // await new Promise(r => setTimeout(r, 1000));
+        next();
+      },
+    },
+    {
+      path: '/file',
+      name: 'file',
+      component: FileUploadView,
+      // component: createListView('JobsView'),
+      beforeEnter: async (to, from, next) => {
+        // bus.$emit('start:spinner');
         // await new Promise(r => setTimeout(r, 1000));
         next();
       },

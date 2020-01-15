@@ -9,9 +9,11 @@
       <span>&nbsp;|&nbsp;</span>
       <router-link to="/board">{{$t('message.Board')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
-      <router-link to="/chart">{{$t('message.Chart')}}</router-link>
+      <router-link to="/chart">{{$t('message.ChartJs')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
       <router-link to="/i18n">{{$t('message.i18n')}}</router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link to="/file">{{$t('message.File')}}</router-link>
       <span v-if="testing">&nbsp;|&nbsp;</span>
       <router-link v-if="testing" to="/testing">Testing</router-link>
     </nav>
@@ -22,7 +24,7 @@
 export default {
 	data() {
 		return {
-			testing: false,
+			testing: true,
 		};
 	},
 };
