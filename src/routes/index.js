@@ -10,6 +10,7 @@ import BoardView from '../views/BoardView.vue';
 import BoardItemView from '../views/BoardItemView.vue';
 import WriteView from '../views/WriteView.vue';
 import ChartView from '../views/ChartView.vue';
+import AmChartView from '../views/AmChartView.vue';
 import I18nTest from '../components/I18nTest.vue';
 import TestingView from '../views/TestingView.vue';
 import FileUploadView from '../views/FileUploadView.vue';
@@ -79,6 +80,17 @@ export const router = new VueRouter({
       // component: createListView('JobsView'),
       beforeEnter: async (to, from, next) => {
         bus.$emit('start:spinner');
+        // await new Promise(r => setTimeout(r, 1000));
+        next();
+      },
+    },
+    {
+      path: '/chartAm',
+      name: 'chartAm',
+      component: AmChartView,
+      // component: createListView('JobsView'),
+      beforeEnter: async (to, from, next) => {
+        // bus.$emit('start:spinner');
         // await new Promise(r => setTimeout(r, 1000));
         next();
       },
