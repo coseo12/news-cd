@@ -4,17 +4,10 @@ import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
 am4core.useTheme(am4themes_animated);
 
-export const getXYChart = el => {
+export const getXYChart = (el, data) => {
     let chart = am4core.create(el, am4charts.XYChart);
 
     chart.paddingRight = 20;
-
-    let data = [];
-    let visits = 10;
-    for (let i = 1; i < 366; i++) {
-        visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-        data.push({ date: new Date(2018, 0, i), name: "name" + i, value: visits });
-    }
 
     chart.data = data;
 
@@ -37,4 +30,16 @@ export const getXYChart = el => {
     chart.scrollbarX = scrollbarX;
 
     return chart
-} 
+}
+
+export const getPieChart = (el, data) => {
+    let chart = am4core.create(el, am4charts.PieChart);
+
+    chart.data = data;
+
+    let pieSeries = chart.series.push(new am4charts.PieSeries());
+    pieSeries.dataFields.value = "litres";
+    pieSeries.dataFields.category = "country";
+
+    return chart
+}
