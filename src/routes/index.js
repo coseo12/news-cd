@@ -75,7 +75,7 @@ export const router = new VueRouter({
           next();
         } else {
           alert('토큰을 발급받으세요')
-          next('/news');
+          next('/access');
         }
       },
     },

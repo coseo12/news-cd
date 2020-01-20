@@ -81,8 +81,12 @@ board.interceptors.response.use(
 
 const getAccessToken = async payload => {
   try {
-    const url = `/account/getAccessToken?user_id=${payload.user_id}&user_pwd=${payload.user_pwd}&client_id=${payload.client_id}`;
-    return await board.get(url);
+    let params = new URLSearchParams();
+    params.append('user_id', payload.user_id);
+    params.append('user_pwd', payload.user_pwd);
+    params.append('client_id', payload.client_id);
+    const url = `/account/getAccessToken`;
+    return await board.post(url, params);
   } catch (error) {
     console.log(error);
   }
