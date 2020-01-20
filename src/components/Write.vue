@@ -50,39 +50,41 @@ export default {
 	},
 	methods: {
 		addList() {
-			let items = this.$store.state.boardList;
+			// let items = this.$store.state.boardList;
 			let item = {
-				id: new Date().getTime(),
+				// id: new Date().getTime(),
 				title: this.title,
 				user: this.user,
 				content: this.content,
-				time_ago: this.getTime(),
+				// time_ago: this.getTime(),
 			};
-			items.unshift(item);
-			this.$store.commit('SET_BOARD', items);
+			// items.unshift(item);
+			// this.$store.commit('SET_BOARD', items);
+			this.$store.dispatch('ADD_BOARD_ITEM', item);
 			this.$router.push('/board');
 		},
 		modifyList() {
-			let items = this.$store.state.boardList;
+			// let items = this.$store.state.boardList;
 			let item = {
 				id: this.id,
 				title: this.title,
 				user: this.user,
-				time_ago: this.getTime(),
+				// time_ago: this.getTime(),
 				content: this.content,
 			};
-			let func = (acc, cur) => {
-				if (Number(this.id) === Number(cur.id)) {
-					acc.push(item);
-					return acc;
-				} else {
-					acc.push(cur);
-					return acc;
-				}
-			};
-			items = items.reduce(func, []);
+			// let func = (acc, cur) => {
+			// 	if (Number(this.id) === Number(cur.id)) {
+			// 		acc.push(item);
+			// 		return acc;
+			// 	} else {
+			// 		acc.push(cur);
+			// 		return acc;
+			// 	}
+			// };
+			// items = items.reduce(func, []);
 
-			this.$store.commit('SET_BOARD', items);
+			// this.$store.commit('SET_BOARD', items);
+			this.$store.dispatch('PUT_BOARD_ITEM', item);
 			this.$router.push('/board');
 		},
 		toList() {

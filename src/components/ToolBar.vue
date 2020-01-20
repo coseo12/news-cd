@@ -16,6 +16,8 @@
       <router-link to="/file">{{$t('message.File')}}</router-link>
       <span>&nbsp;|&nbsp;</span>
       <router-link to="/chartAm">AmChart</router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link to="/access">accessToken</router-link>
       <span v-if="testing">&nbsp;|&nbsp;</span>
       <router-link v-if="testing" to="/testing">Testing</router-link>
     </nav>

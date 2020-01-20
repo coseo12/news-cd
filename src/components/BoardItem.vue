@@ -62,18 +62,19 @@ export default {
 			});
 		},
 		deleted() {
-			let items = this.$store.state.boardList;
-			const id = Number(this.$route.params.id);
-			const func = (acc, cur) => {
-				if (Number(cur.id) === id) {
-					return acc;
-				} else {
-					acc.push(cur);
-					return acc;
-				}
-			};
-			items = items.reduce(func, []);
-			this.$store.commit('SET_BOARD', items);
+			// let items = this.$store.state.boardList;
+			// const id = Number(this.$route.params.id);
+			// const func = (acc, cur) => {
+			// 	if (Number(cur.id) === id) {
+			// 		return acc;
+			// 	} else {
+			// 		acc.push(cur);
+			// 		return acc;
+			// 	}
+			// };
+			// items = items.reduce(func, []);
+			// this.$store.commit('SET_BOARD', items);
+			this.$store.dispatch('DELETE_BOARD_ITEM', Number(this.$route.params.id));
 			this.$router.push('/board');
 		},
 		toList() {

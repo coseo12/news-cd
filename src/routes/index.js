@@ -14,6 +14,7 @@ import AmChartView from '../views/AmChartView.vue';
 import I18nTest from '../components/I18nTest.vue';
 import TestingView from '../views/TestingView.vue';
 import FileUploadView from '../views/FileUploadView.vue';
+import AccessToken from '../views/AccessToken';
 import bus from '../utils/bus.js';
 import { store } from '../store/index.js';
 
@@ -68,9 +69,14 @@ export const router = new VueRouter({
       component: BoardView,
       // component: createListView('JobsView'),
       beforeEnter: async (to, from, next) => {
-        bus.$emit('start:spinner');
-        // await new Promise(r => setTimeout(r, 1000));
-        next();
+        if (store.state.accessToken !== '') {
+          bus.$emit('start:spinner');
+          await store.dispatch('FETCH_BOARD_LIST', store.state.boardList);
+          next();
+        } else {
+          alert('토큰을 발급받으세요')
+          next('/news');
+        }
       },
     },
     {
@@ -103,6 +109,23 @@ export const router = new VueRouter({
       beforeEnter: async (to, from, next) => {
         // bus.$emit('start:spinner');
         // await new Promise(r => setTimeout(r, 1000));
+        next();
+      },
+    },
+    {
+      path: '/access',
+      name: 'access',
+      component: AccessToken,
+      // component: createListView('JobsView'),
+      beforeEnter: async (to, from, next) => {
+        bus.$emit('start:spinner');
+        const params = {
+          user_id: 'user1',
+          user_pwd: 'user1',
+          client_id:
+            '82052969d824a3fe4fc2072989ec80dc2bb54e8ddb1bc973a09c6b00ba2c141b',
+        };
+        await store.dispatch('FETCH_ACCESSTOKEN', params);
         next();
       },
     },

@@ -19,5 +19,13 @@ export default {
     state.totalPage = Math.ceil(
       state.totalItems / state.pageRange,
     );
+  },
+  SET_TOKEN(state, payload) {
+    state.tmp = payload;
+    state.accessToken = payload.account.accessToken;
+    state.refreshToken = payload.account.refreshToken;
+  },
+  SET_BOARD_LIST(state, payload) {
+    state.boardList = payload.boardList.reverse();
   }
 };

@@ -6,5 +6,9 @@ export default {
   totalPage: 0,
   pageRange: 10,
   nowPage: 1,
-  boardList: []
+  boardList: [],
+  test: false,
+  accessToken: '',
+  refreshToken: '',
+  tmp: {}
 };

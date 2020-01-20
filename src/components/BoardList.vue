@@ -43,13 +43,16 @@ import { mapGetters } from 'vuex';
 import ListMixin from '../mixins/ListMixin.js';
 
 export default {
-	computed: {
-		...mapGetters(['fetchedBoardList']),
-	},
 	data() {
 		return {
 			totalItems: this.$store.state.totalItems,
 		};
+	},
+	computed: {
+		...mapGetters(['fetchedBoardList']),
+	},
+	created() {
+		this.$store.commit('SET_PAGING_DEFAULT');
 	},
 	methods: {
 		toWrite() {
