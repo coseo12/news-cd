@@ -36,6 +36,7 @@ export const router = new VueRouter({
         bus.$emit('start:spinner');
         await store.dispatch('FETCH_LIST', to.name);
         // bus.$emit('end:spinner');
+
         next();
       },
     },
